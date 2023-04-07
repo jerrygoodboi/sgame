@@ -1,2 +1,2 @@
 install:
-	cc plate.c -o plate -lncurses -w0
+	cc plate.c -o plate -lncurses -w
