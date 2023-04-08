@@ -30,10 +30,10 @@ while((val=getch())!=27){
 		}
 	        clock_gettime(CLOCK_MONOTONIC,&t);
 	     	ms=(t.tv_sec*1000LL+t.tv_nsec/1000000LL);
-		if(val == right && px != maxx-3 ){
+		if((val == right || val == 108 )&& px != maxx-3 ){
 		px++;
 		}
-		else if(val==left && px != 0){
+		else if((val==left || val == 104) && px != 0){
 		px--;
 		}
 		move(py, 0);
@@ -43,15 +43,14 @@ while((val=getch())!=27){
 		if(ay==maxy){
 		if(px==ax||px+2==ax||px+1==ax){
 		score++;
-		}
+		if(score%3==0&&speed>100){
+		speed-=50;
+		}}
 		else{
 		lives--;
 		}
 		ay=0;
 		ax=(rand()%maxx);
-		}
-		if(score%3==0&&speed>100){
-		speed-=50;
 		}
 		if(lives==0){
 			break;
