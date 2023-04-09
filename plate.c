@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #define right 261
 #define left 260
 #include <ncurses.h>
